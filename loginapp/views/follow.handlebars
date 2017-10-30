@@ -1,0 +1,20 @@
+
+<input type="text" placeholder="Search">
+
+<div id="data">
+  {{#each users}}
+    {{this._id}}
+    <br>
+    {{this}}
+
+    <div class="row">
+      <div class="col-md-6">
+        <button class="btn btn-success" onclick="window.location.href='/follow/{{this.username}}'">Follow</button>
+      </div>
+      <div class="col-md-6">
+        <button class="btn btn-default"  value="">Get Profile</button>
+      </div>
+    </div>
+    <hr>
+  {{/each}}
+</div>

@@ -1,0 +1,42 @@
+<h2 class="page-header">Create a Trip</h2>
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<form method="post" action="/trips/create">
+   <div class="form-group">
+    <label>Trip Name</label>
+    <input type="text" class="form-control" placeholder="Name" name="name">
+  </div>
+  <div class="form-group" id='test'>
+    <label>Members</label>
+    <!-- <input type="text" class="form-control" placeholder="Username" name="username"> -->
+  </div>
+
+  <input type="text" id="counter" name="counter" value="">
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<button onclick="myFunction()">Add member</button>
+<!-- <button onclick="done()">Done</button> -->
+
+
+<script>
+var i = 0;
+var el = document.getElementById('test');
+function myFunction() {
+    i = i + 1;
+    var btn = document.createElement("INPUT");
+    btn.setAttribute("id",i);
+    btn.setAttribute("name",i);
+    btn.setAttribute("placeholder","Name")
+    // var t = document.createTextNode("Add new member");
+    el.appendChild(btn);
+    document.getElementById("counter").value = String(i);
+    // document.getElementById("counter").value = String(i);
+    // btn.appendChild(t);
+  //  document.body.appendChild(btn);
+    // i = i + 1;
+}
+</script>
